@@ -1,26 +1,18 @@
 import React, { Component } from 'react'
-import { Button, Text, View } from 'react-native';
+import { View } from 'react-native';
 
-import { connect } from 'react-redux';
-
-import { testAction } from './actions';
+import AddProductForm from './components/Add.Product.Form';
+import ProductsContainer from './containers/Products.Container';
 
 class MainApp extends Component {
   render() {
     return (
-      <View>
-        <Text>Testing the thing here</Text>
-        <Button title="Press Me!" onPress={() => this.props.testAction()}/>
-        <Text>{JSON.stringify(this.props)}</Text>
+      <View style={{ margin: 10 }}>
+        <AddProductForm />
+        <ProductsContainer />
       </View>
     )
   }
 }
 
-const mapStateToProps = (state) => {
-  return ({
-    allState: state
-  })
-}
-
-export default connect(mapStateToProps, { testAction })(MainApp);
+export default MainApp;

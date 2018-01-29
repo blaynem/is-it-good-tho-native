@@ -7,6 +7,9 @@ let { store, persistor } = configureStore()
 
 import MainApp from './MainApp';
 
+// will remove all persisted data from reducers on refresh
+persistor.purge()
+
 const Main = () => (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>

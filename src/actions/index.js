@@ -1,9 +1,10 @@
-export function testAction() {
+import { ADDSTRAIN } from '../constants'
+
+export function addStrain(obj) {
   return(dispatch) => {
-    console.log("Testing")
     dispatch({
-      type: "TESTACTION",
-      payload: "Test Data Sent!"
+      type: ADDSTRAIN,
+      payload: obj
     })
   }
 }
